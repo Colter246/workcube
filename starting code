@@ -4,7 +4,7 @@
 PRIZM prizm;         //declare object (reference the prizm)
 
 void setup(){
-  prizm.PrizmBegin(){
+prizm.PrizmBegin(){
  prizm.setMotorPower(1,100);  //100% speed
   delay(1000);
   prizm.setMotorPower(1,125);  //125 means BRAKE
