@@ -1,0 +1,13 @@
+#include <PRIZM.h>   //link up the library
+PRIZM prizm;         //declare object (reference the prizm)
+
+void setup(){
+  prizm.PrizmBegin();
+}
+
+void loop (){
+  int distance = prizm.readSonicSensorCM(2);
+  int mappedValue = map(distance,0,300,0,100);
+  prizm.setMoterPower(1,mappedValue);
+  delay(500);
+}
