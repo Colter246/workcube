@@ -1,0 +1,17 @@
+#include <PRIZM.h>   //link up the library
+PRIZM prizm;         //declare object (reference the prizm)
+int  counter = 1;
+
+void setup() {
+  PRIZM.PrizmBegin();
+  Serial.begin(9600);
+  Serial.println("start of setup");
+  delay(1000);
+}
+
+void loop() {
+  
+  counter += 1;
+  Serial.println("loop"= String(counter));
+
+}
