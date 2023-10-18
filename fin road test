@@ -1,0 +1,38 @@
+#include <PRIZM.h>   //link up the library
+PRIZM prizm;         //declare object (reference the prizm)
+
+void setup(){
+  prizm.PrizmBegin();
+}
+
+void loop (){
+  prizm.setServoPosition(1,0);
+  Forward();
+  delay(2000);
+  TurnRight();
+  delay(500);
+  Forward();
+  delay(500);
+  TurnLeft();
+  delay(500);
+  Forward();
+  delay(1000);
+  brake();
+  delay(100);
+  prizm.setServoPosition(1,180);
+  delay(1000);
+  prizm.PrizmEnd();
+}
+
+void Forward(){
+  prizm.setMotorPowers(100,-100);
+}
+void TurnRight(){
+  prizm.setMotorPowers(125,-100);
+}
+void TurnLeft(){
+  prizm.setMotorPowers(100,125);
+}
+void brake(){
+  prizm.setMotorPowers(125,125);
+}
